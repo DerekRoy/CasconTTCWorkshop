@@ -13,7 +13,7 @@ import { HttpClient, HttpParams, HttpHeaders } from "@angular/common/http";
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent  implements OnInit{
+export class AppComponent implements OnInit{
   title = 'cascon-subway-prediction';
   control1 = new FormControl();
   control2 = new FormControl();
@@ -95,10 +95,7 @@ export class AppComponent  implements OnInit{
       "values":[["12:23","S","YUS","11","23","1","0","0","0","0","0","0","0","0","0","0","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"]]
     }]}
 
-  private httpClient: HttpClient;
-  constructor(httpClient: any) {
-    this.httpClient = httpClient;
-  };
+  constructor(private httpClient: HttpClient) {};
 
   ngOnInit() {
     this.filteredOptions1 = this.control1.valueChanges
