@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { OnInit} from '@angular/core';
 import {map, startWith} from 'rxjs/operators';
 import { HttpClient, HttpParams, HttpHeaders } from "@angular/common/http";
-import 'hammerjs';
+// import 'hammerjs';
 
 @Component({
   selector: 'app-root',
