@@ -40,19 +40,6 @@
       </mat-autocomplete>
     </mat-form-field>
 
-    <!-- line (BD, SHP, SRT, YU) -->
-    <label class="positionInCenter" style="margin-bottom: 10px">Choose the
-      subway line</label>
-    <mat-radio-group aria-labelledby="example-radio-group-label"
-                     class="radio-group"
-                     [(ngModel)]="chosenLine">
-      <mat-radio-button class="radio-button"
-                        *ngFor="let line of lineOptions"
-                        [value]="line">
-        {{line}}
-      </mat-radio-button>
-    </mat-radio-group>
-
     <br/>
 
     <!-- Direction (N, S, E, W) -->
