@@ -17,6 +17,7 @@ export class AppComponent implements OnInit{
   title = 'cascon-subway-prediction';
   control1 = new FormControl();
   control2 = new FormControl();
+  loadingResult = false;
   stationOptions: string[] = ['SHEPPARD WEST STATION', 'MUSEUM STATION', 'KIPLING STATION',
   'COLLEGE STATION', 'WARDEN STATION', 'WILSON YARD',
   'DONLANDS STATION', 'KEELE STATION', 'KENNEDY BD STATION',
@@ -107,6 +108,8 @@ export class AppComponent implements OnInit{
   chosenDirection: string;
   chosenLine: string;
   chosenStation: string;
+  outputValue_min: number;
+  outputValue_sec: number;
   filteredOptions1: Observable<string[]>;
   filteredOptions2: Observable<string[]>;
   cloudApiKey = "b2L1liMCcap6dKPMj_jKlrpe1-Ix5vGbxbSZ3MQKKuaP";
@@ -248,6 +251,7 @@ export class AppComponent implements OnInit{
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const tokenurl = "https://iam.bluemix.net/oidc/token"
 
+    this.loadingResult = true;
     this.httpClient.post(proxyurl + tokenurl,
     new HttpParams()
       .set("grant_type", "urn:ibm:params:oauth:grant-type:apikey")
@@ -279,7 +283,11 @@ export class AppComponent implements OnInit{
           data => {
             console.log("prediction successful", data);
             const result = data["predictions"][0].values[0];
-            this.outputValue = parseFloat(result).toFixed(2);
+            var rawValue = +parseFloat(result).toFixed(2);
+            
+            this.outputValue_min = Math.floor(rawValue);
+            this.outputValue_sec = Math.floor((rawValue - this.outputValue_min)*60);
+            this.loadingResult = false;
           },
           error => {
             console.log("Rrror", error);
