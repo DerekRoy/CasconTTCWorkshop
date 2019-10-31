@@ -1,8 +1,6 @@
 # CasconTTCWorkshop
 This is a project for Cascon / Evoke
 
-Link to the deployed app - https://cascon-ttc-demo.mybluemix.net/ - deployed on Bluemix - IBM Cloud
-
 UI for our prediction app:
 
 <img width="1173" alt="Screen Shot 2019-10-23 at 10 54 53 AM" src="https://user-images.githubusercontent.com/2717342/67449304-bf76df80-f5e7-11e9-8d41-8018769a7205.png">
