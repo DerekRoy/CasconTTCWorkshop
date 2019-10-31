@@ -299,7 +299,7 @@ export class AppComponent implements OnInit{
         console.log("PUT Request is successful ", data);
         const result = JSON.parse(JSON.stringify(data));
         const bearerToken = result.access_token;
-        const predictionUrl = "https://us-south.ml.cloud.ibm.com/v4/deployments/c352c820-51ac-4bdc-9b2e-d440fa090592/predictions";
+        const predictionUrl = "https://us-south.ml.cloud.ibm.com/v4/deployments/5e43f1ef-ac13-4f4e-ba42-f09c1dd31a26/predictions";
 
         this.httpClient.post(proxyurl + predictionUrl,
           this.bodyData,
