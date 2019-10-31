@@ -77,6 +77,43 @@ export class AppComponent implements OnInit{
   'FINCH TO UNION STATION', 'SCARBOROUGH RAPID TRAN',
   'BAY LOWER STATION', 'SHEPPARD YONGE'];
 
+  actualStations = ['SHEPPARD WEST STATION', 'MUSEUM STATION', 'KIPLING STATION',
+    'COLLEGE STATION', 'WARDEN STATION', 'WILSON YARD',
+    'DONLANDS STATION', 'KEELE STATION', 'KENNEDY BD STATION',
+    'KENNEDY SRT STATION', 'VICTORIA PARK STATION', 'OLD MILL STATION',
+    'DAVISVILLE STATION', 'EGLINTON WEST STATION',
+    'ROYAL YORK STATION', 'CHESTER STATION', 'COXWELL STATION',
+    'ST GEORGE BD STATION', 'SHERBOURNE STATION', 'EGLINTON STATION',
+    'PAPE STATION', 'BLOOR STATION', 'ST PATRICK STATION',
+    'CHRISTIE STATION', 'LAWRENCE EAST STATION', 'UNION STATION',
+    'MCCOWAN STATION', 'YORK MILLS STATION', 'HIGH PARK STATION',
+    'FINCH STATION', 'LESLIE STATION', 'GREENWOOD STATION',
+    'KING STATION', 'WILSON STATION', 'VAUGHAN MC STATION',
+    'MAIN STREET STATION', 'LAWRENCE STATION', 'QUEEN’S PARK STATION',
+    'JANE STATION', 'DUNDAS STATION', 'ST GEORGE YUS STATION',
+    'FINCH WEST STATION', 'ISLINGTON STATION', 'YONGE SHP STATION',
+    'YORKDALE STATION', 'WOODBINE STATION',
+    'ST CLAIR STATION', 'SHEPPARD STATION', 'ROSEDALE STATION',
+    'BAY STATION', 'BAYVIEW STATION', 'BATHURST STATION',
+    'MIDLAND STATION', 'DUPONT STATION', 'WELLESLEY STATION',
+    'SUMMERHILL STATION', 'LAWRENCE WEST STATION',
+    'SPADINA YUS STATION', 'BROADVIEW STATION',
+    'ST CLAIR WEST STATION', 'DUFFERIN STATION',
+    'ELLESMERE STATION', 'DOWNSVIEW PARK STATION', 'OSSINGTON STATION',
+    'CASTLE FRANK STATION', 'YONGE BD STATION', 'DUNDAS WEST STATION',
+    'GLENCAIRN STATION', 'HIGHWAY 407 STATION',
+    'PIONEER VILLAGE STATIO', 'KENNEDY STATION TO KIP', 'NORTH YORK CTR STATION',
+    'LANSDOWNE STATION', 'QUEEN STATION',
+    'BLOOR DANFORTH SUBWAY', 'ST ANDREW STATION', 'OSGOODE STATION',
+    'DON MILLS STATION', 'SCARB CTR STATION',
+    'GREENWOOD YARD', 'DAVISVILLE HOSTLER', 'RUNNYMEDE STATION',
+    'BAY LOWER', 'MCCOWAN YARD', 'BESSARION STATION',
+    'SEHPPARD STATION', 'GREENWOOD PORTAL', 'YORK UNIVERSITY STATIO',
+    'DUFFERIN TO LANSDOWNE', 'WILSON HOSTLER', 'WILSON TO EGLINTON',
+    'GREENWOOD WYE', 'KEELE YARD', 'YUS/BD/SHEPPARD SUBWAY',
+    'WILSON HOSLTER', 'SHEPPARD YONGE STATION', 'SPADINA STATION',
+    'KENNEDY - MCCOWAN', 'SCARBOROUGH RAPID TRAN', 'SHEPPARD YONGE'];
+
   YU_line = ["SHEPPARD WEST STATION", "MUSEUM STATION", "COLLEGE STATION", "DAVISVILLE STATION", "EGLINTON WEST STATION", "EGLINTON STATION", "BLOOR STATION",
                   "ST PATRICK STATION", "UNION STATION", "YORK MILLS STATION", "FINCH STATION", "KING STATION", "WILSON STATION", "VAUGHAN MC STATION",
                   "LAWRENCE STATION", "QUEEN’S PARK STATION", "DUNDAS STATION", "ST GEORGE YUS STATION", "FINCH WEST STATION", "DAVISVILLE YARD", "YONGE SHP STATION", "YORKDALE STATION",
@@ -111,7 +148,6 @@ export class AppComponent implements OnInit{
   outputValue_min: number;
   outputValue_sec: number;
   filteredOptions1: Observable<string[]>;
-  filteredOptions2: Observable<string[]>;
   cloudApiKey = "b2L1liMCcap6dKPMj_jKlrpe1-Ix5vGbxbSZ3MQKKuaP";
   mlInstanceID = "bf7eada0-e2c4-4f19-9339-bd5f69ec38de";
   selectedDate = {};
@@ -131,18 +167,13 @@ export class AppComponent implements OnInit{
         startWith(''),
         map(value => this._filter(value))
       );
-
-    this.filteredOptions2 = this.control2.valueChanges
-      .pipe(
-        startWith(''),
-        map(value => this._filter(value))
-      );
   }
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.stationOptions.filter(option => option.toLowerCase().startsWith(filterValue));
+    return this.actualStations.filter(option =>
+            (option.toLowerCase().startsWith(filterValue)));
   }
 
   onDateChange(event: MatDatepickerInputEvent<Date>) {
@@ -161,7 +192,7 @@ export class AppComponent implements OnInit{
   onStartStationChange(event: MatAutocompleteSelectedEvent) {
     console.log(event.option.value);
     this.selectedStation = event.option.value;
-    
+
   }
 
   onBoundChange(event: any) {
@@ -284,7 +315,7 @@ export class AppComponent implements OnInit{
             console.log("prediction successful", data);
             const result = data["predictions"][0].values[0];
             var rawValue = +parseFloat(result).toFixed(2);
-            
+
             this.outputValue_min = Math.floor(rawValue);
             this.outputValue_sec = Math.floor((rawValue - this.outputValue_min)*60);
             this.loadingResult = false;
