@@ -286,7 +286,7 @@ export class AppComponent implements OnInit{
     this.httpClient.post(proxyurl + tokenurl,
     new HttpParams()
       .set("grant_type", "urn:ibm:params:oauth:grant-type:apikey")
-      .set("apikey", "b2L1liMCcap6dKPMj_jKlrpe1-Ix5vGbxbSZ3MQKKuaP")
+      .set("apikey", this.cloudApiKey)
     ,
       { headers: new HttpHeaders()
                 .set("Content-Type", "application/x-www-form-urlencoded")
