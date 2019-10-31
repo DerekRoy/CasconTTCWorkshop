@@ -307,7 +307,7 @@ export class AppComponent implements OnInit{
                       .set("Content-Type", "application/javascript")
                       .set("Accept", "application/json")
                       .set("Authorization", `Bearer ${bearerToken}`)
-                      .set("ML-Instance-ID", "bf7eada0-e2c4-4f19-9339-bd5f69ec38de")
+                      .set("ML-Instance-ID", this.mlInstanceID)
             }
         )
         .subscribe(
