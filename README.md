@@ -3,7 +3,7 @@ This is a project for Cascon / Evoke
 
 UI for our prediction app:
 
-<img width="1173" alt="Screen Shot 2019-10-23 at 10 54 53 AM" src="https://user-images.githubusercontent.com/2717342/67449304-bf76df80-f5e7-11e9-8d41-8018769a7205.png">
+<img width="1140" alt="Screen Shot 2019-11-01 at 3 18 42 PM" src="https://user-images.githubusercontent.com/2717342/68050214-0b4a1880-fcbb-11e9-9a2c-99f9af285f58.png">
 
 In Watson Studio after creating an account and project <<<<< TODO 
 
