@@ -44,6 +44,3 @@ Which is provided here: https://drive.google.com/file/d/1W1S8DQN4SvYZ5lMNj-ikS5n
 Documentation for estimator and and data transformation:
 https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/autoai-details.html?audience=wdp&context=analytics
 
-### AutoAI demo run
-
-
