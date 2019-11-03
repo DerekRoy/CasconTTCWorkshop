@@ -7,6 +7,8 @@ UI for our prediction app:
 
 In Watson Studio after creating an account and project <<<<< TODO 
 
+# Data preparation
+
 Click New Data Asset, then on the right of the screen a window will appear. Drag the ttc_subway_2018.csv into this window.This window will indicate wether the upload is successful or not. Now close the window. 
 
 <img width="1591" alt="1" src="https://user-images.githubusercontent.com/38026494/67409084-1220af00-f588-11e9-849e-a33833af1033.png">
@@ -36,5 +38,12 @@ Now just copy data from the insert data cell to the below cell.
 Run the whole notebook, and you will have a fully processed dataset. 
 
 Which is provided here: https://drive.google.com/file/d/1W1S8DQN4SvYZ5lMNj-ikS5nSCXr7Svdg/view?usp=sharing
+
+# Model traning
+
+Documentation for estimator and and data transformation:
+https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/autoai-details.html?audience=wdp&context=analytics
+
+### AutoAI demo run
 
 
