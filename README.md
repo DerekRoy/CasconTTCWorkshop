@@ -5,6 +5,9 @@ UI for our prediction app:
 
 <img width="1376" alt="Screen Shot 2019-11-01 at 3 20 56 PM" src="https://user-images.githubusercontent.com/2717342/68050646-f457f600-fcbb-11e9-8be9-0e729ab2dc1b.png">
 
+# how setup Watson Studio
+https://www.youtube.com/watch?v=DBRGlAHdj48 
+
 In Watson Studio after creating an account and project <<<<< TODO 
 
 # Data preparation
