@@ -8,8 +8,6 @@ UI for our prediction app:
 # How to set up Watson Studio
 https://www.youtube.com/watch?v=DBRGlAHdj48 
 
-In Watson Studio after creating an account and project <<<<< TODO 
-
 # Data preparation
 
 Click New Data Asset, then on the right of the screen a window will appear. Drag the ttc_subway_2018.csv into this window.This window will indicate wether the upload is successful or not. Now close the window. 
