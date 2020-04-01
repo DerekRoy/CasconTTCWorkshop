@@ -137,7 +137,7 @@ export class AppComponent implements OnInit{
   outputValue_sec: number;
   filteredOptions1: Observable<string[]>;
   cloudApiKey = "b2L1liMCcap6dKPMj_jKlrpe1-Ix5vGbxbSZ3MQKKuaP";
-  mlInstanceID = "c5efc5e0-5928-405a-b08e-94c644b0c739";
+  mlInstanceID = "86601442-b2ad-43d0-9914-64663c27d9a7";
   selectedDate = {};
   selectedStation = "";
   selectedTravelTime = null;
@@ -287,7 +287,7 @@ export class AppComponent implements OnInit{
         console.log("PUT Request is successful ", data);
         const result = JSON.parse(JSON.stringify(data));
         const bearerToken = result.access_token;
-        const predictionUrl = "https://us-south.ml.cloud.ibm.com/v4/deployments/85620c12-a260-4105-a76b-6d2c0fc0cd0f/predictions";
+        const predictionUrl = "https://us-south.ml.cloud.ibm.com/v4/deployments/435cc195-aab7-4a59-b42b-515644d71a0c/predictions";
 
         this.httpClient.post(proxyurl + predictionUrl,
           this.bodyData,
